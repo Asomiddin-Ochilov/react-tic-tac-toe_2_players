@@ -1,0 +1,30 @@
+*{
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+}
+
+
+@import "./variable.scss";
+@import "../Pages/Home/home";
+@import "../Pages/GamePage/game_page.scss";
+
+.icon_logo{
+     width:16px;
+     height:63px;
+     cursor: inherit;
+}
+
+.icon{
+     width:60px;
+     height:60px;
+     cursor: inherit;
+}
+
+.font{
+     font-family: 'Rubik', sans-serif;
+}
+.App{
+     width: 100%;
+      
+}

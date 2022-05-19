@@ -1,0 +1,168 @@
+{
+  "IcoMoonType": "selection",
+  "icons": [
+    {
+      "icon": {
+        "paths": [
+          "M187.802 3.944v87.548h-175.016v63.042h175.016v87.548h63.069v-238.139h-63.069z",
+          "M250.875 858.548h-106.057l-100.222-100.222-44.588 44.588 84.482 84.456-84.482 84.508 44.588 44.562 94.903-94.848h111.376v-63.043z",
+          "M187.8 580.14h-100.195c-11.073 0-20.055-9.336-20.055-20.87 0-11.451 8.983-20.787 20.055-20.787h100.195v41.657zM187.8 386.209v90.533l-145.679-99.352-35.524 52.133 78.023 53.191h-6.025c-40.708 0-73.708 34.302-73.708 76.53 0 42.335 33 76.639 73.708 76.639h172.275v-249.702l-63.070 0.028z"
+        ],
+        "attrs": [],
+        "width": 260,
+        "isMulticolor": false,
+        "isMulticolor2": false,
+        "grid": 0,
+        "tags": [
+          "logo"
+        ],
+        "colorPermutations": {}
+      },
+      "attrs": [],
+      "properties": {
+        "order": 131,
+        "id": 1,
+        "name": "logo",
+        "prevSize": 32
+      },
+      "setIdx": 0,
+      "setId": 17,
+      "iconIdx": 0
+    },
+    {
+      "icon": {
+        "paths": [
+          "M741.001 752.801l-474.276-474.276",
+          "M741 278.525l-474.278 474.276"
+        ],
+        "attrs": [
+          {
+            "fill": "none",
+            "strokeLinejoin": "miter",
+            "strokeLinecap": "round",
+            "strokeMiterlimit": "4",
+            "strokeWidth": 83.84105411764706
+          },
+          {
+            "fill": "none",
+            "strokeLinejoin": "miter",
+            "strokeLinecap": "round",
+            "strokeMiterlimit": "4",
+            "strokeWidth": 83.84105411764706
+          }
+        ],
+        "width": 1009,
+        "isMulticolor": false,
+        "isMulticolor2": false,
+        "grid": 0,
+        "tags": [
+          "close"
+        ],
+        "colorPermutations": {}
+      },
+      "attrs": [
+        {
+          "fill": "none",
+          "strokeLinejoin": "miter",
+          "strokeLinecap": "round",
+          "strokeMiterlimit": "4",
+          "strokeWidth": 83.84105411764706
+        },
+        {
+          "fill": "none",
+          "strokeLinejoin": "miter",
+          "strokeLinecap": "round",
+          "strokeMiterlimit": "4",
+          "strokeWidth": 83.84105411764706
+        }
+      ],
+      "properties": {
+        "order": 132,
+        "id": 0,
+        "name": "close",
+        "prevSize": 32
+      },
+      "setIdx": 0,
+      "setId": 19,
+      "iconIdx": 0
+    },
+    {
+      "icon": {
+        "paths": [
+          "M815.816 512.616c0 164.483-133.34 297.824-297.824 297.824s-297.824-133.34-297.824-297.824c0-164.483 133.34-297.824 297.824-297.824s297.824 133.34 297.824 297.824z"
+        ],
+        "attrs": [
+          {
+            "fill": "none",
+            "strokeLinejoin": "miter",
+            "strokeLinecap": "butt",
+            "strokeMiterlimit": "4",
+            "strokeWidth": 85.09241313432835
+          }
+        ],
+        "width": 1039,
+        "isMulticolor": false,
+        "isMulticolor2": false,
+        "grid": 0,
+        "tags": [
+          "circle"
+        ],
+        "colorPermutations": {}
+      },
+      "attrs": [
+        {
+          "fill": "none",
+          "strokeLinejoin": "miter",
+          "strokeLinecap": "butt",
+          "strokeMiterlimit": "4",
+          "strokeWidth": 85.09241313432835
+        }
+      ],
+      "properties": {
+        "order": 133,
+        "id": 0,
+        "name": "circle",
+        "prevSize": 32
+      },
+      "setIdx": 1,
+      "setId": 18,
+      "iconIdx": 0
+    }
+  ],
+  "height": 1024,
+  "preferences": {
+    "showGlyphs": true,
+    "showQuickUse": true,
+    "showQuickUse2": true,
+    "showSVGs": true,
+    "fontPref": {
+      "prefix": "icon-",
+      "metadata": {
+        "fontFamily": "icomoon"
+      },
+      "metrics": {
+        "emSize": 1024,
+        "baseline": 6.25,
+        "whitespace": 50
+      },
+      "embed": false
+    },
+    "imagePref": {
+      "prefix": "icon-",
+      "png": true,
+      "useClassSelector": true,
+      "color": 0,
+      "bgColor": 16777215,
+      "classSelector": ".icon",
+      "name": "icomoon",
+      "autoHost": true
+    },
+    "historySize": 50,
+    "showCodes": true,
+    "gridSize": 16,
+    "quickUsageToken": {
+      "UntitledProject": "ZDA5YTc2MjY3NGE1YTdkODY2Yzg1OGQxMTc1N2FmMzYjMSMxNjQ1MjQ5MjMxIyMjMzcxZThmMGRiMWEz"
+    },
+    "showGrid": false
+  }
+}

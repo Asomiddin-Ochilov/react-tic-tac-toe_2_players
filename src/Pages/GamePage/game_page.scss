@@ -1,0 +1,128 @@
+.game_page{
+     width: 100%;
+     min-height: 100vh;
+     background-color: $pink;
+     .navbar{
+          width: 100%;
+          height: fit-content;
+          padding-top: 50px;
+          padding-left: 60px;
+          .icon_logo{
+               color: white;
+          }
+
+     }
+
+     .content{
+          width: 100%;
+          height: auto;
+          min-height: fit-content;
+          margin: auto;
+
+          .header_bar{
+               width: 280px;
+               height: fit-content;
+               margin: 1rem auto;
+               .scoreboard {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-evenly;
+                    width: 100%;
+                    font-size: 1.5rem;
+                    background-color: white;
+                    box-shadow: 0px 0px 8px #888888;
+                    border-radius: 0.5rem;
+                    font-weight: bold;
+                    margin: auto;
+                  }
+                  
+                  .score {
+                    width: 100%;
+                    text-align: center;
+                    padding: 1rem 0rem;
+                  }
+                  
+                  .x-score {
+                    color: rgb(255, 70, 37);
+                    border-bottom: 5px solid rgb(255, 70, 37);
+                    border-radius: 0.5rem 0rem 0rem 0.5rem;
+                  }
+                  
+                  .o-score {
+                    color: rgb(44, 135, 255);
+                    border-bottom: 5px solid rgb(44, 135, 255);
+                    border-radius: 0rem 0.5rem 0.5rem 0rem;
+                  }
+                  
+                  .inactive {
+                    border-bottom: 5px solid transparent;
+                  }
+          }
+          .game{
+               width: fit-content;
+               height: fit-content;
+               margin: auto;
+               display: grid;
+               grid-template-columns: 80px 80px 80px;
+               grid-gap: 21px;
+               .item{
+                   width: 80px;
+                   height: 80px;
+                   border-radius: 30px;
+                   border: 5.57px solid rgba(255, 255, 255, 1); 
+                   display: flex;
+                   align-items: center;
+                   justify-content: center;
+                   cursor: pointer;
+                   .icon{
+                        color: white;
+                   }
+                   .yellow{
+                        color: $yellow;
+                   }
+               }
+               .blue{
+                    background-color: $blue;
+               }
+          }
+
+          .footer_bar{
+               width: 300px;
+               height: 100px;
+               margin: auto;
+               .start_btn{
+                    width: 150px;
+                    height: 40px;
+                    background-color: $yellow;
+                    display: flex;
+                    color: white;
+                    border: none;
+                    text-transform: uppercase;
+                    align-items: center;
+                    justify-content: center;
+                    text-decoration: none;
+                    margin:1rem auto;
+                    font-weight: 500;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    box-shadow: #094c66 6px 6px 0px;
+                    transition: transform 200ms box-shadow 200ms;
+                    &:active{
+                         transform: translateY(6px) translateX(6px);
+                         box-shadow: #094c66 0px 0px 0px;
+                  }
+
+
+               }
+          }
+
+     }
+     
+}
+
+table td {
+	border: 1px solid grey;
+	width: 100px;
+	height: 100px;
+}
