@@ -1,17 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import AnimatedPage from "../AnimatedPage";
 import Icon from "../../Components/Icons/Index";
 import Square from "./square";
 
 const GamePage = () => {
-  
-  const [xPlaying, setXPlaying] = useState(true);
-
   const [game, setGame] = useState(Array(9).fill(null));
 
-  const [scores, setScores] = useState({ xScore: 0, oScore: 0 });
-
-  const [gameOver, setGameOver] = useState(false);
+  const [winner, setWinner] = useState(null);
 
   const lines = [
     [0, 1, 2],
@@ -24,48 +19,86 @@ const GamePage = () => {
     [2, 4, 6],
   ];
 
-  const handleItemClick = (boxIdx) => {
-    const updatedGame = game.map((value, idx) => {
-      if (idx === boxIdx) {
-        return xPlaying ? "x" : "o";
-      } else {
-        return value;
-      }
-    });
+  useEffect(() => {
+    const isCompyuter = game.filter((item) => item !== null).length % 2 === 1;
 
-    setGame(updatedGame);
+    const emptyIndex = game
+      .map((item, index) => (item === null ? index : null))
+      .filter((val) => val !== null);
 
-    const winner = checkWinner(updatedGame);
+    const linesArray = (a, b, c) => {
+      return lines.filter((squareIndex) => {
+        const squareValue = squareIndex.map((index) => game[index]);
+        return (
+          JSON.stringify([a, b, c].sort()) ===
+          JSON.stringify(squareValue.sort())
+        );
+      });
+    };
 
-    if (winner) {
-      if (winner === "o") {
-        let { oScore } = scores;
-        oScore += 1;
-        setScores({ ...scores, oScore });
-      } else {
-        let { xScore } = scores;
-        xScore += 1;
-        setScores({ ...scores, xScore });
-      }
+    const playerOne = linesArray("x", "x", "x").length > 0;
+
+    const campyuterOne = linesArray("o", "o", "o").length > 0;
+
+    if (playerOne) {
+      setWinner("x");
     }
 
-    setXPlaying(!xPlaying);
-  };
+    if (campyuterOne) {
+      setWinner("o");
+    }
 
-  const checkWinner = (game) => {
-    for (let i = 0; i < lines.length; i++) {
-      const [x, y, z] = lines[i];
+    const putCompyuter = (index) => {
+      let newSquare = game;
+      newSquare[index] = "o";
+      setGame([...newSquare]);
+    };
 
-      if (game[x] && game[x] === game[y] && game[y] === game[z]) {
-        setGameOver(true);
-        return game[x];
+    if (isCompyuter) {
+      const winLines = linesArray("o", "o", null);
+      if (winLines.length > 0) {
+        const winIndex = winLines[0].filter((index) => game[index] === null)[0];
+        putCompyuter(winIndex);
+        return;
+      }
+
+      const lineBlock = linesArray("x", "x", null);
+      if (lineBlock.length > 0) {
+        const blockIndex = lineBlock[0].filter(
+          (index) => game[index] === null
+        )[0];
+        putCompyuter(blockIndex);
+        return;
+      }
+
+      const lineContainer = linesArray("o", null, null);
+      if (lineContainer.length > 0) {
+        putCompyuter(winLines[0].filter((index) => game[index] === null)[0]);
+        return;
+      }
+
+      const randomIndex =
+        emptyIndex[Math.ceil(Math.random() * emptyIndex.length)];
+      putCompyuter(randomIndex);
+    }
+  }, [game]);
+
+  const clickSquare = (index) => {
+    if (winner === "o") {
+    } else {
+      console.log(game);
+      const isPlayer = game &&  game.filter((item) => item !== null).length % 2 === 0;
+      console.log(isPlayer);
+      if (isPlayer) {
+        let newSquare = game;
+        newSquare[index] = "x";
+        setGame([...newSquare]);
       }
     }
   };
 
   const resetGame = () => {
-    setGameOver(false);
-    setScores({ xScore: 0, oScore: 0 })
+    setWinner(null);
     setGame(Array(9).fill(null));
   };
 
@@ -81,12 +114,12 @@ const GamePage = () => {
           <div className="header_bar">
             <div className="scoreboard">
               <span
-                className={`score x-score font  ${!xPlaying && "inactive"}`}
+                className={`score x-score font`}
               >
-                X - {scores.xScore}
+                {winner === 'x' ? 'you win' : ''}
               </span>
-              <span className={`score o-score font ${xPlaying && "inactive"}`}>
-                O - {scores.oScore}
+              <span className={`score o-score font`}>
+              {winner === 'o' ? 'you lost' : ''}
               </span>
             </div>
           </div>
@@ -95,7 +128,7 @@ const GamePage = () => {
               <Square
                 x={item === "x" ? 1 : 0}
                 o={item === "o" ? 1 : 0}
-                onClick={() => item === null && handleItemClick(index)}
+                onClick={() => item === null && clickSquare(index)}
                 key={index}
               />
             ))}
